@@ -1,0 +1,32 @@
+---
+import store from "./public/store.svg";
+---
+
+<div class="BagIcon-container">
+  <img class="BagIcon-image" src={store.src} />
+  <span class="BagIcon-notification">6</span>
+</div>
+<style>
+  .BagIcon-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-inline: auto 0px;
+  }
+
+  .BagIcon-notification {
+    position: absolute;
+    top: -5px;
+    right: 0px;
+    background-color: #d8624c;
+    color: white;
+    border-radius: 50%;
+    font-size: 12px;
+    line-height: 18px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+</style>

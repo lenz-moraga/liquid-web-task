@@ -1,0 +1,119 @@
+---
+import BagIcon from "./components/BagIcon.astro";
+import billify_logo from "./public/Billify-logo.png";
+// interface Props {
+//   title: string;
+//   body: string;
+//   href: string;
+// }
+
+// const { href, title, body } = Astro.props;
+---
+
+<header class="Header">
+  <div class="container Header-container">
+    <a href="/">
+      <figure class="Header-logo">
+        <img src={billify_logo.src} alt="Billify Logo" />
+      </figure>
+    </a>
+
+    <BagIcon />
+    <label for="menu-toggle" class="Header-hamburguerLabel">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+    <input
+      type="checkbox"
+      id="menu-toggle"
+      name="menu-toggle"
+      class="Header-hamburguerCheck d-none"
+    />
+
+    <div class="Header-row">
+      <nav class="Header-menu">
+        <ul class="Header-links">
+          <li class="Header-item" class="Header-item">
+            <a href="/" class="Header-link">Servicios</a>
+          </li>
+          <li class="Header-item">
+            <a href="/" class="Header-link">Productos</a>
+          </li>
+          <li class="Header-item">
+            <a href="/" class="Header-link">Bodas</a>
+          </li>
+          <li class="Header-item">
+            <a href="/" class="Header-link">Estilos</a>
+          </li>
+          <li class="Header-item">
+            <a href="/" class="Header-link">Blog</a>
+          </li>
+        </ul>
+        <div>
+          <a>Iniciar sesión</a>
+          <a>Reserva</a>
+          <div>
+            <ul class="Header-links">
+              <li class="Header-item"><a href="/" class="Header-link">ES</a></li>
+              <li class="Header-item"><a href="/" class="Header-link">Heart</a></li>
+              <li class="Header-item"><a href="/" class="Header-link"><BagIcon /></a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<style>
+  .Header {
+    background-color: #313131;
+    max-height: 56px;
+    padding-block: 13px;
+    width: 100%;
+  }
+  .Header-container {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    position: relative;
+    flex-direction: row;
+  }
+  .Header-logo {
+    margin: 0px;
+  }
+  .Header-logo img {
+    height: 26px;
+    width: auto;
+  }
+  .Header-hamburguerLabel {
+    margin-right: 0px;
+    margin-left: 24px;
+  }
+  .Header-hamburguerLabel span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px 0;
+  }
+  .Header-row {
+    position: absolute;
+    top: 56px;
+    height: 100svh;
+    border: 1px solid red;
+    width: 100%;
+  }
+
+  .Header-hamburguerCheck:checked ~ .Header-row,
+  .Header-hamburguerCheck:checked ~ .Header-row > .Header-menu {
+    height: 100vh;
+    transition: all 0.3s ease-in-out;
+  }
+  
+
+  /* input[type="checkbox"] {
+    display: none;
+  } */
+</style>
