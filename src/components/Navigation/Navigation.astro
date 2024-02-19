@@ -1,8 +1,12 @@
 ---
+import classnames from "classnames";
+
 import BagIcon from "./components/BagIcon.astro";
+import HeartIcon from "./components/HeartIcon.astro";
+
 import billify_logo from "./public/Billify-logo.png";
 
-import "./Navigation.module.css";
+import styles from "./Navigation.module.css";
 // interface Props {
 //   title: string;
 //   body: string;
@@ -10,19 +14,26 @@ import "./Navigation.module.css";
 // }
 
 // const { href, title, body } = Astro.props;
-
 ---
 
-<header class="Header">
-  <div class="container header_container">
+<header class={styles.header}>
+  <div class={styles.header_container}>
     <a href="/">
-      <figure class="Header-logo">
+      <figure class={styles.header_logo}>
         <img src={billify_logo.src} alt="Billify Logo" />
       </figure>
     </a>
 
-    <BagIcon />
-    <label for="menu-toggle" class="Header-hamburguerLabel">
+    <div class={classnames(styles.display_on_mobile, styles.bag_icon)}>
+      <BagIcon />
+    </div>
+    <label
+      for="menu-toggle"
+      class={classnames(
+        styles.header_hamburguer_label,
+        styles.display_on_mobile
+      )}
+    >
       <span></span>
       <span></span>
       <span></span>
@@ -31,47 +42,70 @@ import "./Navigation.module.css";
       type="checkbox"
       id="menu-toggle"
       name="menu-toggle"
-      class="Header-hamburguerCheck d-none"
+      class={styles.header_hamburguer_check}
     />
 
-    <div class="Header-row">
-      <nav class="Header-menu">
-        <ul class="Header-links">
-          <li class="Header-item Dropdown">
-            <a href="/" class="Header-link">Servicios</a>
+    <div class={styles.header_row}>
+      <nav class={styles.header_menu}>
+        <ul class={styles.header_links}>
+          <li class={classnames(styles.header_item, styles.dropdown)}>
+            <a href="/" class={styles.header_link}>Servicios</a>
 
-            <div class="Dropdown-content">
-              <ul class="Header-subMenu">
-                <li><a class="Dropdown-item" href="#">Action</a></li>
-                <li><a class="Dropdown-item" href="#">Another action</a></li>
+            <div class={styles.dropdown_content}>
+              <ul class={styles.header_submenu}>
+                <li><a class={styles.header_link} href="#">Peluquería</a></li>
                 <li>
-                  <a class="Dropdown-item" href="#">Something else here</a>
+                  <a class={styles.header_link} href="#">Maquillaje</a>
+                </li>
+                <li>
+                  <a class={styles.header_link} href="#">Uñas</a>
+                </li>
+                <li>
+                  <a class={styles.header_link} href="#">Estética</a>
                 </li>
               </ul>
             </div>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">Productos</a>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}>Productos</a>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">Bodas</a>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}>Bodas</a>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">Estilos</a>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}>Estilos</a>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">Blog</a>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}>Blog</a>
           </li>
-          <li><a>Iniciar sesión</a></li>
-          <li><a>Reserva</a></li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">ES</a>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}>Iniciar sesión</a>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link">Heart</a>
+          <li class={classnames(styles.header_item, styles.reservation_link)}>
+            <a href="/" class={styles.header_link}>Reserva</a>
           </li>
-          <li class="Header-item">
-            <a href="/" class="Header-link"><BagIcon /></a>
+          <li class={classnames(styles.header_item, styles.dropdown)}>
+            <a href="/" class={styles.header_link}>ES</a>
+
+            <div class={styles.dropdown_content}>
+              <ul
+                class={classnames(
+                  styles.header_submenu,
+                  styles.language_dropdown
+                )}
+              >
+                <li><a class={styles.header_link} href="#">ES</a></li>
+                <li>
+                  <a class={styles.header_link} href="#">EN</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class={styles.header_item}>
+            <a href="/" class={styles.header_link}><HeartIcon /></a>
+          </li>
+          <li class={classnames(styles.header_item, styles.display_on_desktop)}>
+            <a href="/" class={styles.header_link}><BagIcon /></a>
           </li>
         </ul>
       </nav>
