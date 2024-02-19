@@ -2,6 +2,16 @@
 import heart from "./public/heart.svg";
 ---
 
-<div class="HeartIcon-container">
-  <img class="HeartIcon-image" src={heart.src} />
-</div>
+<figure class="Icon-container">
+  <img class="Icon-image" src={heart.src} />
+</figure>
+
+<style>
+    .Icon-container {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin-inline: auto;
+    margin-block: 0px;
+  }
+</style>

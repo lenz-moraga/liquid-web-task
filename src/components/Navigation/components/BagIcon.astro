@@ -2,19 +2,20 @@
 import store from "./public/store.svg";
 ---
 
-<div class="BagIcon-container">
-  <img class="BagIcon-image" src={store.src} />
-  <span class="BagIcon-notification">6</span>
-</div>
+<figure class="Icon-container">
+  <img class="Icon-image" src={store.src} />
+  <span class="Icon-notification">6</span>
+</figure>
 <style>
-  .BagIcon-container {
+  .Icon-container {
     position: relative;
     width: 30px;
     height: 30px;
-    margin-inline: auto 0px;
+    margin-inline: auto;
+    margin-block: 0px;
   }
 
-  .BagIcon-notification {
+  .Icon-notification {
     position: absolute;
     top: -5px;
     right: 0px;

@@ -1,6 +1,4 @@
 ---
-import classnames from "classnames";
-
 import BagIcon from "./components/BagIcon.astro";
 import HeartIcon from "./components/HeartIcon.astro";
 
@@ -16,99 +14,71 @@ import styles from "./Navigation.module.css";
 // const { href, title, body } = Astro.props;
 ---
 
-<header class={styles.header}>
-  <div class={styles.header_container}>
-    <a href="/">
+<nav class={`navbar navbar-expand-lg ${styles.header}`}>
+  <div class={`container-fluid ${styles.header_container}`}>
+    <a class="navbar-brand" href="#">
       <figure class={styles.header_logo}>
-        <img src={billify_logo.src} alt="Billify Logo" />
-      </figure>
-    </a>
-
-    <div class={classnames(styles.display_on_mobile, styles.bag_icon)}>
-      <BagIcon />
-    </div>
-    <label
-      for="menu-toggle"
-      class={classnames(
-        styles.header_hamburguer_label,
-        styles.display_on_mobile
-      )}
-    >
+      <img src={billify_logo.src} alt="Billify Logo" />
+    </figure>
+  </a>
+  <div class={`${styles.display_on_mobile} ${styles.bag_icon}`}>
+    <BagIcon />
+  </div>
+    <button class={`navbar-toggler ${styles.header_hamburguer_label}`} type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
       <span></span>
       <span></span>
       <span></span>
-    </label>
-    <input
-      type="checkbox"
-      id="menu-toggle"
-      name="menu-toggle"
-      class={styles.header_hamburguer_check}
-    />
-
-    <div class={styles.header_row}>
-      <nav class={styles.header_menu}>
-        <ul class={styles.header_links}>
-          <li class={classnames(styles.header_item, styles.dropdown)}>
-            <a href="/" class={styles.header_link}>Servicios</a>
-
-            <div class={styles.dropdown_content}>
-              <ul class={styles.header_submenu}>
-                <li><a class={styles.header_link} href="#">Peluquería</a></li>
-                <li>
-                  <a class={styles.header_link} href="#">Maquillaje</a>
-                </li>
-                <li>
-                  <a class={styles.header_link} href="#">Uñas</a>
-                </li>
-                <li>
-                  <a class={styles.header_link} href="#">Estética</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}>Productos</a>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}>Bodas</a>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}>Estilos</a>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}>Blog</a>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}>Iniciar sesión</a>
-          </li>
-          <li class={classnames(styles.header_item, styles.reservation_link)}>
-            <a href="/" class={styles.header_link}>Reserva</a>
-          </li>
-          <li class={classnames(styles.header_item, styles.dropdown)}>
-            <a href="/" class={styles.header_link}>ES</a>
-
-            <div class={styles.dropdown_content}>
-              <ul
-                class={classnames(
-                  styles.header_submenu,
-                  styles.language_dropdown
-                )}
-              >
-                <li><a class={styles.header_link} href="#">ES</a></li>
-                <li>
-                  <a class={styles.header_link} href="#">EN</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class={styles.header_item}>
-            <a href="/" class={styles.header_link}><HeartIcon /></a>
-          </li>
-          <li class={classnames(styles.header_item, styles.display_on_desktop)}>
-            <a href="/" class={styles.header_link}><BagIcon /></a>
-          </li>
-        </ul>
-      </nav>
+    </button>
+    <div class={`collapse navbar-collapse ${styles.header_row}`} id="navbarNavDropdown">
+      <ul class={`navbar-nav ${styles.header_menu}`}>
+        <li class={`nav-item ${styles.header_item} dropdown`}>
+          <a class={`nav-link dropdown-toggle ${styles.header_link}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Servicios
+          </a>
+          <ul class={`dropdown-menu ${styles.header_submenu}`}>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">Peluquería</a></li>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">Maquillaje</a></li>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">Uñas</a></li>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">Estética</a></li>
+          </ul>
+        </li>
+        <li class={`nav-item ${styles.header_item}`}>
+          <a class={`nav-link ${styles.header_link}`} aria-current="page" href="#">Productos</a>
+        </li>
+        <li class={`nav-item" ${styles.header_item}`}>
+          <a class={`nav-link ${styles.header_link}`} href="#">Bodas</a>
+        </li>
+        <li class={`nav-item" ${styles.header_item}`}>
+          <a class={`nav-link ${styles.header_link}`} href="#">Estilos</a>
+        </li>
+        <li class={`nav-item" ${styles.header_item}`}>
+          <a class={`nav-link ${styles.header_link}`} href="#">Blog</a>
+        </li>
+        <li class={styles.header_item}>
+          <a href="/" class={`nav-link ${styles.header_link}`}>Iniciar sesión</a>
+        </li>
+        <li class={styles.header_item}>
+          <a href="/" class={`nav-link ${styles.header_link}`}>Reserva</a>
+        </li>
+        <li class={`${styles.header_item} ${styles.reservation_link} ${styles.display_on_mobile}`}>
+          <a href="/" class={`nav-link ${styles.header_link}`}>Reserva</a>
+        </li>
+        <li class={`nav-item" ${styles.header_item} dropdown`}>
+          <a class={`nav-link dropdown-toggle ${styles.header_link}`} href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            ES
+          </a>
+          <ul class={`dropdown-menu ${styles.header_submenu}`}>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">ES</a></li>
+            <li class={`nav-item" ${styles.header_item}`}><a class={`dropdown-item ${styles.header_link}`} href="#">EN</a></li>
+          </ul>
+        </li>
+        <li class={styles.header_item}>
+          <a href="/" class={styles.header_link}><HeartIcon /></a>
+        </li>
+        <li class={`${styles.header_item} ${styles.display_on_desktop}`}>
+          <a href="/" class={styles.header_link}><BagIcon /></a>
+        </li>
+      </ul>
     </div>
   </div>
-</header>
+</nav>
