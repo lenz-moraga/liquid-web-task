@@ -10,7 +10,6 @@
 
 .header_logo {
   margin: 0px;
-  margin-left: 0%;
   display: flex;
   align-items: center;
 }
@@ -136,6 +135,10 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .header_logo {
+    margin-inline: 35px 0px;
+  }
+
   .header_item {
     min-width: 130px;
   }
@@ -153,3 +156,16 @@
     min-width: 60px;
   }
 }
+
+@media screen and (min-width: 1600px) {
+  .header_logo {
+    margin-inline: 65px 0px;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .header_logo {
+    margin-inline: 85px 0px;
+  }
+}
+
