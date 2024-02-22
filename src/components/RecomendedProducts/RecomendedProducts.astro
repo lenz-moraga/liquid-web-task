@@ -1,0 +1,52 @@
+---
+import ProductCard from "../Shared/Card/ProductCard.astro";
+
+import styles from "./RecomendedProducts.module.css";
+
+interface Product {
+  imgUrl: string;
+  name: string;
+  price: string;
+  description: string;
+  href: string;
+}
+
+interface Props {
+  title: string;
+  products: Product[];
+  displayAddProducts?: boolean;
+  displayCardButtons?: boolean;
+}
+
+const {
+  title,
+  products = [],
+  displayAddProducts = false,
+  displayCardButtons = false,
+} = Astro.props;
+---
+
+<div class="container">
+  <h1 class={styles.recommended_section_title}>{title}</h1>
+  <div class={styles.cards_container}>
+    {
+      products.length > 0 &&
+        products.map((product) => (
+          <ProductCard
+            imgUrl={product.imgUrl}
+            name={product.name}
+            price={product.price}
+            description={product.description}
+            href={product.href}
+            displayCardButtons={displayCardButtons}
+          />
+        ))
+    }
+  </div>
+  {
+    displayAddProducts && (
+      <button class={styles.add_products}>Añadir productos</button>
+    )
+  }
+  <hr />
+</div>

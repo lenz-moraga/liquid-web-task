@@ -116,6 +116,7 @@ footer {
   max-width: 329px;
   background: #313131;
   padding: 14px 20px;
+  color: #ffffff;
 }
 
 .email_n_button_container {
@@ -207,6 +208,16 @@ footer {
   }
 }
 
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+  .footer_column {
+    text-align: center;
+  }
+
+  .footer_column_container {
+    align-items: center;
+  }
+}
+
 @media screen and (min-width: 992px) {
   .footer_newsletter_form label {
     max-width: 310px;
@@ -240,7 +251,8 @@ footer {
 
   .footer_column ul li a.footer_column_title,
   .footer_column p {
-    font-family: "Raleway";
+    font-family: "Raleway", sans-serif;
+
     font-size: 30px;
     font-weight: 300;
     line-height: 20px;
@@ -258,8 +270,8 @@ footer {
     background-color: #313131;
   }
 
-  .footer_dropdown_menu li a {
-    padding-left: 0px;
+  .footer_column ul li a {
+    padding: 8px;
   }
 
   .footer_socials {

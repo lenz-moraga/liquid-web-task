@@ -1,0 +1,42 @@
+---
+import styles from "./ProductCard.module.css";
+
+interface Props {
+  description?: string;
+  href?: string;
+  imgUrl: string;
+  name: string;
+  price?: string;
+  displayCardButtons?: boolean;
+}
+
+const {
+  description,
+  href = "/",
+  imgUrl,
+  name,
+  price,
+  displayCardButtons = false,
+} = Astro.props;
+---
+
+<div class={styles.card}>
+  <div class={styles.card_image_container}>
+    <img src={imgUrl} alt={name} />
+  </div>
+  <div class={styles.card_information}>
+    <p class={styles.card_name}>
+      {name}
+    </p>
+    <p class={styles.card_price}>
+      {price}
+    </p>
+  </div>
+  {
+    displayCardButtons && href && (
+      <a class={styles.stop_recommending} href={href}>
+        Dejar de recomendar
+      </a>
+    )
+  }
+</div>

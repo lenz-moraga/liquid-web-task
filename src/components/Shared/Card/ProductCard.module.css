@@ -1,0 +1,49 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: #fff;
+  min-height: 150px;
+  max-height: 480px;
+}
+
+.card_image_container {
+  display: grid;
+  grid-template-columns: 130px;
+  grid-template-rows: minmax(140px, 170px);
+  background-color: #eeeeee;
+  padding: 10px 15px;
+  place-items: center;
+}
+
+.card_image_container img {
+  max-width: 100%;
+}
+
+.card_information {
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  line-height: 30px;
+  font-weight: 400;
+  font-style: normal;
+  text-align: center;
+  color: #313131;
+}
+
+.card_information > * {
+  margin: 0;
+  padding: 0;
+}
+
+.card_information .card_price {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 768px) {
+  .card_image_container {
+    grid-template-columns: minmax(130px, 400px);
+    grid-template-rows: minmax(170px, 305px);
+  }
+}
