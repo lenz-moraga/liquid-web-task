@@ -13,6 +13,8 @@ footer {
   font-style: normal;
   text-align: left;
   color: #ffffff;
+  max-width: 1600px;
+  margin: 0px auto;
 }
 
 .footer_column_container {
@@ -167,6 +169,9 @@ footer {
 
 .rights_reserved {
   background-color: #000000;
+}
+
+.rights_reserved .footer_container {
   padding: 15px 8px;
 }
 
@@ -225,6 +230,14 @@ footer {
 }
 
 @media screen and (min-width: 1200px) {
+  .footer_container {
+    padding-block: 95px 65px;
+  }
+
+  .rights_reserved .footer_container {
+    padding-block: 15px;
+  }
+
   .footer_column_container {
     flex-direction: row;
     justify-content: space-between;
@@ -243,6 +256,10 @@ footer {
     gap: 10px;
   }
 
+  .app_column_img_container img {
+    max-width: 195px;
+  }
+
   .footer_column ul.footer_dropdown_menu {
     display: block;
     margin-top: 35px;
@@ -255,7 +272,6 @@ footer {
 
     font-size: 30px;
     font-weight: 300;
-    line-height: 20px;
     font-style: normal;
     text-align: left;
     color: #ffffff;
@@ -271,7 +287,12 @@ footer {
   }
 
   .footer_column ul li a {
-    padding: 8px;
+    line-height: 18px;
+    font-size: 14px;
+  }
+
+  .footer_dropdown_menu li a {
+    padding-block: 6px;
   }
 
   .footer_socials {
