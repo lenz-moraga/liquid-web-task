@@ -12,4 +12,10 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
   gap: 20px 10px;
+
+  margin-block: 80px;
+}
+
+hr {
+  margin-block: 85px;
 }

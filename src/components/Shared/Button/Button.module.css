@@ -1,0 +1,47 @@
+
+
+
+.button {
+  padding: 10px 12px;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 18px;
+  font-style: normal;
+  text-align: center;
+  color: #ffffff;
+  border-radius: 33px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+
+  width: 100%;
+  max-width: 250px;
+  text-decoration: none;
+  border: solid 1px transparent;
+  gap: 15px;
+}
+
+.button.black {
+  background-color: #313131;
+}
+.button.purple {
+  background-color: #a191b2;
+}
+.button.white {
+  color: #313131;
+  background-color: #ffffff;
+  border-color: #313131;
+}
+
+.centeredButton {
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+  .button {
+    padding: 15px 55px;
+  }
+}

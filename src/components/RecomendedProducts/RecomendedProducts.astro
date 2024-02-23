@@ -1,5 +1,6 @@
 ---
 import ProductCard from "../Shared/Card/ProductCard.astro";
+import Button from "../Shared/Button/Button.astro";
 
 import styles from "./RecomendedProducts.module.css";
 
@@ -36,17 +37,12 @@ const {
             imgUrl={product.imgUrl}
             name={product.name}
             price={product.price}
-            description={product.description}
             href={product.href}
             displayCardButtons={displayCardButtons}
           />
         ))
     }
   </div>
-  {
-    displayAddProducts && (
-      <button class={styles.add_products}>Añadir productos</button>
-    )
-  }
+  {displayAddProducts && <Button color="purple" customClass="centeredButton">Añadir productos</Button>}
   <hr />
 </div>

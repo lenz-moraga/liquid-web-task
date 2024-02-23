@@ -1,8 +1,8 @@
 ---
+import Button from "../Button/Button.astro";
 import styles from "./ProductCard.module.css";
 
 interface Props {
-  description?: string;
   href?: string;
   imgUrl: string;
   name: string;
@@ -11,7 +11,6 @@ interface Props {
 }
 
 const {
-  description,
   href = "/",
   imgUrl,
   name,
@@ -34,9 +33,7 @@ const {
   </div>
   {
     displayCardButtons && href && (
-      <a class={styles.stop_recommending} href={href}>
-        Dejar de recomendar
-      </a>
+      <Button color="black">Dejar de recomendar</Button>
     )
   }
 </div>

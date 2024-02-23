@@ -1,0 +1,24 @@
+---
+import styles from "./Button.module.css";
+
+interface Props {
+  color: "purple" | "black" | "white";
+  customClass?: string;
+  utilityClasses?: string;
+  href?: string;
+}
+
+const {
+  color,
+  href = "/",
+  customClass = "",
+  utilityClasses = "",
+} = Astro.props;
+---
+
+<a
+  class={`${styles[color]} ${styles.button} ${styles[customClass]} ${utilityClasses}`}
+  href={href}
+>
+  <slot />
+</a>

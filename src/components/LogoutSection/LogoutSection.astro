@@ -1,0 +1,17 @@
+---
+import Button from "../Shared/Button/Button.astro";
+import logoutIcon from "./public/logout_icon.svg";
+
+import styles from "./Logout.module.css";
+---
+
+<div class={styles.logout_container}>
+  <Button color="black">
+    <img src={logoutIcon.src} alt="Cerrar sesión" />
+    <span>Cerrar sesión</span>
+  </Button>
+  <Button color="white">Consultar contrato</Button>
+  <Button color="white" utilityClasses="d-block d-sm-none">
+    Darme de baja
+  </Button>
+</div>

@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LogoutSection from "../components/LogoutSection/LogoutSection.astro";
 import Navigation from "../components/Navigation/Navigation.astro";
 import RecomendedProducts from "../components/RecomendedProducts/RecomendedProducts.astro";
 import Footer from "../components/Footer/Footer.astro";
@@ -7,7 +8,6 @@ import Footer from "../components/Footer/Footer.astro";
 import { PRODUCTS_INFORMATION } from "../data/products";
 
 import "./index.module.css";
-import recommendedProductsStyles from "../components/RecomendedProducts/RecomendedProducts.module.css";
 ---
 
 <Layout title="Welcome to Bellify.">
@@ -22,5 +22,6 @@ import recommendedProductsStyles from "../components/RecomendedProducts/Recomend
     displayAddProducts
     displayCardButtons
   />
+  <LogoutSection />
   <Footer />
 </Layout>
