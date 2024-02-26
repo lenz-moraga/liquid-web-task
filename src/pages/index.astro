@@ -8,10 +8,12 @@ import Footer from "../components/Footer/Footer.astro";
 import { PRODUCTS_INFORMATION } from "../data/products";
 
 import "./index.module.css";
+import ReviewSection from "../components/Reviews/ReviewSection.astro";
 ---
 
 <Layout title="Welcome to Bellify.">
   <Navigation />
+  <ReviewSection />
   <RecomendedProducts
     title="recomendados para ti"
     products={PRODUCTS_INFORMATION}

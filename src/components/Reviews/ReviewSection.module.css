@@ -1,0 +1,22 @@
+h2.review_section_title {
+  margin-bottom: 70px;
+  font-family: "Cormorant Infant";
+  font-size: 36px;
+  font-weight: bold;
+  font-style: normal;
+  text-align: center;
+  color: #a191b2;
+}
+
+.review_section_container > div:nth-child(2) {
+  padding-block: 40px;
+  border-bottom: 1px solid #00000025;
+  border-top: 1px solid #00000025;
+  margin-block: 40px;
+}
+
+@media screen and (min-width: 768px) {
+  .recommended_section_title {
+    letter-spacing: 20px;
+  }
+}

@@ -1,6 +1,7 @@
 ---
 import ProductCard from "../Shared/Card/ProductCard.astro";
 import Button from "../Shared/Button/Button.astro";
+import Divider from "../Shared/Divider/Divider.astro";
 
 import styles from "./RecomendedProducts.module.css";
 
@@ -8,7 +9,6 @@ interface Product {
   imgUrl: string;
   name: string;
   price: string;
-  description: string;
   href: string;
 }
 
@@ -27,7 +27,7 @@ const {
 } = Astro.props;
 ---
 
-<div class="container">
+<section class="container">
   <h1 class={styles.recommended_section_title}>{title}</h1>
   <div class={styles.cards_container}>
     {
@@ -43,6 +43,12 @@ const {
         ))
     }
   </div>
-  {displayAddProducts && <Button color="purple" customClass="centeredButton">Añadir productos</Button>}
-  <hr />
-</div>
+  {
+    displayAddProducts && (
+      <Button color="purple" customClass="centeredButton">
+        Añadir productos
+      </Button>
+    )
+  }
+  <Divider />
+</section>

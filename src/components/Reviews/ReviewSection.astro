@@ -1,0 +1,34 @@
+---
+import Review from "./components/Review/Review.astro";
+import Divider from "../Shared/Divider/Divider.astro";
+
+import { REVIEW_COMMENTS } from "../../data/products";
+
+import styles from "./ReviewSection.module.css";
+---
+
+<section class={`container d-none d-md-block`}>
+  <Divider />
+  <h2 class={styles.review_section_title}>Valoraciones</h2>
+  <div class={styles.review_section_container}>
+    <Review
+      name="Nombre Apellido"
+      date="25/01/2020"
+      serviceName="Nombre del servicio"
+      comments={REVIEW_COMMENTS}
+    />
+    <Review
+      name="Nombre Apellido"
+      date="25/01/2020"
+      serviceName="Nombre del servicio"
+      comments={REVIEW_COMMENTS}
+    />
+    <Review
+      name="Nombre Apellido"
+      date="25/01/2020"
+      serviceName="Nombre del servicio"
+      comments={REVIEW_COMMENTS}
+    />
+  </div>
+  <Divider />
+</section>

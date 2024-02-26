@@ -16,6 +16,8 @@
   margin-block: 80px;
 }
 
-hr {
-  margin-block: 85px;
+@media screen and (min-width: 768px) {
+  .recommended_section_title {
+    letter-spacing: 20px;
+  }
 }

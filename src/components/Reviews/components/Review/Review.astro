@@ -1,0 +1,26 @@
+---
+
+import avatarImage from "./public/clienta.png";
+import stars from "./public/stars.svg";
+
+import styles from './Review.module.css';
+
+const { name, date, serviceName, comments } = Astro.props;
+---
+
+<div class={styles.review_container}>
+  <img
+    class={styles.user_photo}
+    alt="User Photo"
+    src={avatarImage.src}
+  />
+  <p class={styles.user_name}>{name}</p>
+  <div class={styles.service_content}>
+    <div class={styles.service_information}>
+      <p class={styles.review_date}>{date}</p>
+      <p class={styles.service_name}>{serviceName}</p>
+      <img class={styles.review_qualification} alt="Starts" src={stars.src} />
+    </div>
+    <p class={styles.review_comments}>{comments}</p>
+  </div>
+</div>
